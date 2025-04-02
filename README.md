@@ -94,10 +94,6 @@ The sentiment analysis is powered by:
 - **ML**: SVM, TF-IDF vectorization
 - **Development**: Git, Virtual Environment
 
-## Developers
-
-- Developer 1 - Machine Learning Engineer
-- Developer 2 - Full Stack Developer
 
 ## License
 
