@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}Home - Sentiment Analysis App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+        <div class="hero-section my-5">
+            <h1 class="display-4 fw-bold">Real-Time Sentiment Analysis</h1>
+            <p class="lead mt-3">
+                Discover the emotional tone behind any text with our advanced sentiment analysis tool.
+                Powered by machine learning and natural language processing.
+            </p>
+            <div class="mt-5">
+                <a href="{{ url_for('analyze') }}" class="btn btn-primary btn-lg px-4 me-md-2">Try it now</a>
+                <a href="{{ url_for('about') }}" class="btn btn-outline-secondary btn-lg px-4">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 pt-5">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <div class="feature-icon mb-3">
+                    <i class="bi bi-lightning-charge-fill fs-1 text-primary"></i>
+                    <!-- SVG could be added here for actual icon -->
+                </div>
+                <h3 class="card-title">Fast Analysis</h3>
+                <p class="card-text">Get instant sentiment results with our pre-trained machine learning model.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <div class="feature-icon mb-3">
+                    <i class="bi bi-graph-up fs-1 text-primary"></i>
+                    <!-- SVG could be added here for actual icon -->
+                </div>
+                <h3 class="card-title">Accurate Results</h3>
+                <p class="card-text">Our SVM model has been trained on a diverse dataset to ensure high accuracy.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <div class="feature-icon mb-3">
+                    <i class="bi bi-shield-check fs-1 text-primary"></i>
+                    <!-- SVG could be added here for actual icon -->
+                </div>
+                <h3 class="card-title">Easy to Use</h3>
+                <p class="card-text">Simple interface that allows you to analyze text with just a few clicks.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 pt-3">
+    <div class="col-md-8 offset-md-2 text-center">
+        <h2>How It Works</h2>
+        <p class="lead">
+            Our sentiment analysis tool uses a Support Vector Machine (SVM) model and TF-IDF vectorization
+            to determine if text conveys a positive, negative, or neutral sentiment.
+        </p>
+        <div class="mt-4 mb-5">
+            <div class="steps d-flex justify-content-around">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Enter your text</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Process with ML</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Get results</div>
+                </div>
+            </div>
+        </div>
+        <a href="{{ url_for('analyze') }}" class="btn btn-success btn-lg">Start Analyzing</a>
+    </div>
+</div>
+{% endblock %}

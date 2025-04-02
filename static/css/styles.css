@@ -1,0 +1,119 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 3rem 0;
+}
+
+/* Feature cards */
+.feature-icon {
+    font-size: 2.5rem;
+    color: #0d6efd;
+}
+
+/* Steps */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 0.75rem;
+}
+
+.step::after {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 60%;
+    width: 80%;
+    height: 2px;
+    background-color: #dee2e6;
+    z-index: -1;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+/* Sentiment Analysis Form */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.example-texts {
+    cursor: pointer;
+}
+
+/* Results Page */
+.sentiment-icon {
+    font-size: 4rem;
+}
+
+/* Developer Cards */
+.developer-card {
+    transition: transform 0.3s ease;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.social-links a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #dee2e6;
+}
+
+/* Error Pages */
+.error-container {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.error-code {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+    }
+    
+    .step {
+        margin-bottom: 1.5rem;
+    }
+    
+    .step::after {
+        display: none;
+    }
+}

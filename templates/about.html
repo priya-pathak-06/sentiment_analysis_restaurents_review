@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}About - Sentiment Analysis App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title mb-0">About the Project</h2>
+            </div>
+            <div class="card-body">
+                <h3>Real-Time Sentiment Analysis with Flask-Based UI</h3>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4>Project Overview</h4>
+                        <p>
+                            This web application provides real-time sentiment analysis of text using machine learning. 
+                            Users can input text such as reviews, comments, or any written content, and our system will 
+                            analyze the emotional tone, classifying it as positive, negative, or neutral.
+                        </p>
+                        <p>
+                            The analysis is powered by a Support Vector Machine (SVM) model trained on a diverse dataset 
+                            of text samples. This model has been optimized for accuracy and performance in sentiment classification.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Technical Implementation</h4>
+                        <p>
+                            The backend is built with Python and Flask, providing a robust and scalable API for the sentiment 
+                            analysis functionality. We use scikit-learn's implementation of Support Vector Machines and TF-IDF 
+                            vectorization to process and analyze text input.
+                        </p>
+                        <p>
+                            The frontend is developed using HTML, CSS, JavaScript, and Bootstrap, offering a responsive and 
+                            intuitive user interface that works seamlessly across devices of all sizes.
+                        </p>
+                    </div>
+                </div>
+                
+                <hr class="my-4">
+                
+                <h4>How It Works</h4>
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">1. Text Processing</h5>
+                                <p class="card-text">
+                                    When text is submitted, it undergoes preprocessing which includes 
+                                    cleaning, removing special characters, and converting to lowercase.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">2. Feature Extraction</h5>
+                                <p class="card-text">
+                                    The cleaned text is transformed into numerical features using TF-IDF 
+                                    (Term Frequency-Inverse Document Frequency) vectorization.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">3. Classification</h5>
+                                <p class="card-text">
+                                    The SVM model analyzes these features to determine the sentiment 
+                                    and provides a classification along with a confidence score.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4>Applications</h4>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item">Customer feedback analysis for businesses</li>
+                    <li class="list-group-item">Social media monitoring and brand sentiment tracking</li>
+                    <li class="list-group-item">Product review analysis</li>
+                    <li class="list-group-item">Customer service response prioritization</li>
+                    <li class="list-group-item">Market research and consumer sentiment studies</li>
+                </ul>
+                
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('analyze') }}" class="btn btn-primary btn-lg">Try the Analysis Tool</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

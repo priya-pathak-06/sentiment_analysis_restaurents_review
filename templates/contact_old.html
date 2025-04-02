@@ -1,0 +1,145 @@
+<!-- {% extends "layout.html" %}
+
+{% block title %}Contact - Sentiment Analysis App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title mb-0">Contact Us</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <h3>Get In Touch</h3>
+                        <p>
+                            Have questions or feedback about our sentiment analysis tool? 
+                            We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible.
+                        </p>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h3>Development Team</h3>
+                        <p>Meet the developers behind this sentiment analysis application:</p>
+                        
+                        {% for developer in developers %}
+                        <div class="card mb-3 developer-card">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ developer.name }}</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ developer.role }}</h6>
+                                <p class="card-text">{{ developer.bio }}</p>
+                                <div class="social-links">
+                                    <a href="{{ developer.github }}" class="card-link" target="_blank">
+                                        <i class="bi bi-github"></i> GitHub
+                                    </a>
+                                    <a href="{{ developer.linkedin }}" class="card-link" target="_blank">
+                                        <i class="bi bi-linkedin"></i> LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3>Additional Resources</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-book fs-2 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Documentation</h5>
+                                <p class="mb-0">Learn more about how our sentiment analysis works</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-question-circle fs-2 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>FAQ</h5>
+                                <p class="mb-0">Find answers to common questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-code-square fs-2 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>API</h5>
+                                <p class="mb-0">Integrate our sentiment analysis into your applications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} -->
+
+
+ <!-- Contact Form Section -->
+ <div class="row mt-5">            
+    <!-- Contact Image -->
+    <div class="col-lg-6 d-flex align-items-center justify-content-center" style="margin-top: 40px;">
+        <img src="../static/images/cont.png" alt="Contact Us" class="img-fluid rounded" style="max-width: 80%;">
+    </div>
+
+    <div class="col-lg-6">
+        <h2 class="mb-4" style="color: #212529;">Contact Us</h2>
+        
+        <!-- Success Message -->
+        <!-- {% if success %}
+        <div class="alert alert-success text-center">
+            <i class="fas fa-check-circle me-2"></i> Thank you for reaching out! Your message has been sent successfully.
+        </div>
+        {% endif %} -->
+        
+        <div class="contact-form">
+            <form method="POST">
+            
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-contact text-white"><i class="fas fa-paper-plane me-2"></i> Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>

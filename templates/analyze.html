@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}Analyze Sentiment{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title mb-0">Sentiment Analysis</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead mb-4">Enter the text you would like to analyze for sentiment:</p>
+                
+                <form action="{{ url_for('analyze') }}" method="POST">
+                    <div class="mb-3">
+                        <textarea 
+                            class="form-control" 
+                            id="text" 
+                            name="text" 
+                            rows="6" 
+                            placeholder="Enter your text here (reviews, comments, feedback, etc.)"
+                            required></textarea>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Analyze Sentiment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h3 class="h5 mb-0">Examples</h3>
+            </div>
+            <div class="card-body">
+                <p>Try these example texts:</p>
+                <div class="example-texts">
+                    <div class="example-text mb-2">
+                        <button class="btn btn-sm btn-outline-success example-btn">Positive Example</button>
+                        <span class="ms-2 example-content">The food was delicious and the service was exceptional. Highly recommend!</span>
+                    </div>
+                    <div class="example-text">
+                        <button class="btn btn-sm btn-outline-danger example-btn">Negative Example</button>
+                        <span class="ms-2 example-content">I waited for over an hour and the food was cold when it arrived. Terrible experience!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+    // Script to load example texts
+    document.addEventListener('DOMContentLoaded', function() {
+        const exampleBtns = document.querySelectorAll('.example-btn');
+        const textArea = document.getElementById('text');
+        
+        exampleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const exampleContent = this.nextElementSibling.textContent;
+                textArea.value = exampleContent;
+            });
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}

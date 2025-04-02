@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact - Sentiment Analysis App{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="color: #212529;">Meet Our Team</h2>
+
+    <!-- First Person Information -->
+    <div class="dev-card">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 text-center">
+                <img class="profile-img" alt="Profile" style="width: 80%; max-width: 180px;" src="../static/images/profile_1.png">
+                <p class="mt-3"><a href="https://www.linkedin.com/in/priyapathak0601" class="btn btn-sm btn-outline-primary"><i class="fab fa-linkedin"></i> Connect</a></p>
+            </div>
+            <div class="dev-info col-lg-9 col-md-8">
+                <h3>Priya Pathak</h3>
+                <p>Hello! I'm a data-driven enthusiast with expertise in Excel, SQL, Power BI, and Python. With a strong foundation in data analytics and business intelligence, I specialize in transforming raw data into actionable insights.</p>
+                <p>I hold a Bachelor's degree in IT and am currently pursuing my Master's in Data Science, where I explore advanced analytical techniques and machine learning. Passionate about problem-solving, I build interactive dashboards, data-driven solutions, and automation tools to optimize decision-making. I continuously explore new technologies to enhance efficiency and scalability in data-driven applications.</p>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Second Person Information -->
+    <div class="dev-card">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 text-center">
+                <img class="profile-img" alt="Profile" style="width: 80%; max-width: 180px;" src="../static/images/profile_0.png">
+                <p class="mt-3"><a href="https://www.linkedin.com/in/poojapandey2501" class="btn btn-sm btn-outline-primary"><i class="fab fa-linkedin"></i> Connect</a></p>
+            </div>
+            <div class="dev-info col-lg-9 col-md-8">
+                <h3>Pooja Pandey</h3>
+                <p>I am a dedicated and detail-oriented individual with a strong foundation in mathematics and data-driven decision-making. With a Bachelor's degree in Mathematics and currently pursuing a Master's in Data Science, I have a keen interest in leveraging analytical techniques to solve real-world problems.</p>
+                <p>My skill set includes SQL, Excel, Power BI, Python, and Machine Learning, enabling me to extract meaningful insights, build predictive models, and support data-driven strategies. Passionate about turning raw data into actionable insights, I strive to enhance business decision-making through statistical analysis and visualization.</p>
+            </div>
+        </div>
+    </div>
+
+   <!-- Contact Form Section -->
+<div class="row mt-5">            
+    <!-- Contact Image -->
+    <div class="col-lg-6 d-flex align-items-center justify-content-center" style="margin-top: 40px;">
+        <img src="../static/images/cont.png" alt="Contact Us" class="img-fluid rounded" style="max-width: 80%;">
+    </div>
+    <div class="col-lg-6">
+        <h2 class="mb-4" style="color: #212529;">Contact Us</h2>
+        
+        <!-- Success Message -->
+        {% if success %}
+        <div class="alert alert-success text-center">
+            <i class="fas fa-check-circle me-2"></i> Thank you for reaching out! Your message has been sent successfully.
+        </div>
+        {% endif %}
+        
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} text-center">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <div class="contact-form">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-contact text-white"><i class="fas fa-paper-plane me-2"></i> Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+<style>
+    .dev-card {
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .dev-info h3 {
+        color: #212529;
+        border-bottom: 2px solid #353b42;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+    .contact-form {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .btn-contact {
+        background: #212529;
+        border: none;
+        padding: 10px 25px;
+    }
+    .btn-contact:hover {
+        background: #353b42;
+    }
+    .profile-img {
+        border-radius: 50%;
+        border: 3px solid #f8f9fa;
+    }
+</style>
+{% endblock %}
